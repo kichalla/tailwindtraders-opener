@@ -37,6 +37,8 @@ mkdir -p $tmpSrc
 echo
 echo "Copying files from $DEPLOYMENT_SOURCE to $tmpSrc ..."
 start=$SECONDS
+# NOTE: The following should ideally be using something like KuduSync because between different
+# git pushes by the end user stale files might be left over which is not correct
 cp -rf $DEPLOYMENT_SOURCE/* $tmpSrc
 end=$SECONDS
 runtime=$((end-start))
@@ -53,6 +55,8 @@ echo "Duration: $runtime seconds."
 echo
 echo "Copying files from $tmpSrc to $DEPLOYMENT_TARGET ..."
 start=$SECONDS
+# Q: Shouldn't we clean the output directory first before copying? This is in the case of 2nd
+# and there on builds
 cp -rf $tmpSrc/* $DEPLOYMENT_TARGET
 end=$SECONDS
 runtime=$((end-start))
