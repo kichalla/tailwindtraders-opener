@@ -24,15 +24,16 @@ echo
 
 # Run 
 oryx="$BUILD_DEST/GenerateBuildScript"
-oryx --version
+$oryx --version
 
 #----------------------------------------------------------------
 
 BUILD_DEST='/tmp/buildscriptgen'
 oryx="$BUILD_DEST/GenerateBuildScript"
-oryx --version
+$oryx --version
 
 tmpSrc="/tmp/src"
+rm -rf $tmpSrc
 mkdir -p $tmpSrc
 echo
 echo "Copying files from $DEPLOYMENT_SOURCE to $tmpSrc ..."
@@ -47,7 +48,7 @@ echo "Duration: $runtime seconds."
 echo
 echo Kicking off build ...
 start=$SECONDS
-oryx build $tmpSrc -l nodejs --language-version 10.14
+$oryx build $tmpSrc -l nodejs --language-version 10.14
 end=$SECONDS
 runtime=$((end-start))
 echo "Duration: $runtime seconds."
