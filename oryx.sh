@@ -33,6 +33,7 @@ oryx="$BUILD_DEST/GenerateBuildScript"
 oryx --version
 
 tmpSrc="/tmp/src"
+mkdir -p $tmpSrc
 echo
 echo "Copying files from $DEPLOYMENT_SOURCE to $tmpSrc ..."
 start=$SECONDS
