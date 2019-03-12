@@ -9,7 +9,8 @@
 # than npm.
 set -e
 
-YARN_CACHE_DIR=/usr/local/share/yarn-cache
+# YARN_CACHE_DIR=/usr/local/share/yarn-cache
+YARN_CACHE_DIR=/tmp/yarn-cache
 echo "Caching packages for Yarn. Cache location is $YARN_CACHE_DIR"
 mkdir -p  $YARN_CACHE_DIR
 
