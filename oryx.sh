@@ -30,7 +30,7 @@ $oryx --version
 
 echo
 echo Prepopulating the image with node packages
-./node-cache-packages.sh
+$DEPLOYMENT_SOURCE/node-cache-packages.sh
 
 #----------------------------------------------------------------
 
