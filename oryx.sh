@@ -45,7 +45,7 @@ echo
 echo "Copying files from $DEPLOYMENT_SOURCE to $tmpSrc ..."
 start=$SECONDS
 # NOTE: The following should ideally be using something like KuduSync because between different
-# git pushes by the end user stale files might be left over which is not correct.
+# git pushes by the end user stale files might be left over, which is not correct.
 cp -rf $DEPLOYMENT_SOURCE/* $tmpSrc
 end=$SECONDS
 runtime=$((end-start))
